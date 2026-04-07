@@ -1,34 +1,83 @@
-# AD Groups Lookup Utility — v1.0.0
+🧩 User AD Groups Lookup Utility<br>
+A lightweight PowerShell GUI tool that retrieves a user’s Active Directory group memberships across a selected domain.
 
-This is the first public-safe release of the **AD Groups Lookup Utility**, a GUI-based PowerShell tool for quickly retrieving:
+📌 Features<br>
+- Clean and simple Windows Forms GUI
+- Lookup AD user information:
+- Display Name
+- SAM Account Name
+- Retrieve all AD group memberships
+- Supports multiple domains via dropdown selection
+- Uses Global Catalog for cross-domain group resolution
+- Scrollable output windows for easy reading
+- Console window hidden for a cleaner user experience
 
-- User information (Display Name, SAMAccountName)
-- Active Directory group memberships
-- Across multiple selectable domains
-- Using Global Catalog (3268) for cross-domain visibility
+🛠️ Requirements<br>
+- PowerShell 7.x
+- ActiveDirectory module
+- Install via RSAT or:
+Install-WindowsFeature RSAT-AD-PowerShell
+- Windows OS with .NET Framework support for WinForms
 
-<img width="365" height="401" alt="image" src="https://github.com/user-attachments/assets/6bf264bf-eb5b-4633-9dc6-ae29b39a36ef" />
+🚀 How to Use<br>
+- Download or clone the repository.
+- Unblock the script if needed:
+Unblock-File .\UserADGroupsUtility.ps1
+- Run the script:
+pwsh .\UserADGroupsUtility.ps1
+- In the GUI:
+- Enter a User ID
+- Select a domain
+- Click Search
+- The top output box displays user information.
+The bottom output box displays all AD groups the user belongs to.
 
+🌐 Domain Configuration<br>
+The script includes generic placeholder domains:
+$Domains = @(
+    "domain1.local",
+    "domain2.corp",
+    "example.org",
+    "testlab.local"
+)
 
-### 🔍 Features
-- Clean Windows Forms GUI
-- Domain dropdown selector
-- User info panel
-- Group membership results panel
-- Error handling for missing users or domain issues
-- Sanitized for public sharing (no internal domains or sensitive attributes)
+Replace these with your actual internal domains when deploying in your environment.
 
-### 📦 Files Included
-- `UserADGroupsUtility.ps1`
-- `README.md`
-- `CHANGELOG.md`
+📄 Script Behavior<br>
+✔ Retrieves user attributes
+The script queries AD for:
+- DisplayName
+- SamAccountName
+You can add more attributes as needed.
+✔ Retrieves group memberships
+Uses the Global Catalog (:3268) to ensure cross-domain group resolution.
+✔ Handles errors gracefully
+- User not found
+- Domain connection issues
+- Invalid input
 
-### 🛠 Requirements
-- Windows OS  
-- PowerShell 5.1+  
-- RSAT tools installed  
-- AD query permissions  
+🧪 Example Output<br>
+User Info Box:<br>
+Name: John Doe
+SAM Account: jdoe
 
----
+Group List Box:<br>
+Domain Users
+HR-Access
+VPN-Users
+Workstation-Admins
 
-If you encounter issues or want to contribute, feel free to open an Issue or Pull Request.
+🧩 Customization Options<br>
+You can easily modify:
+- Domain list
+- Displayed user attributes
+- GUI layout (fonts, sizes, labels)
+- Group sorting or filtering
+- Error messages
+
+📄 License<br>
+- You may release this project under any license you prefer (MIT recommended).
+
+🤝 Contributing<br>
+- Contributions, suggestions, and improvements are welcome.
+- Feel free to open an issue or submit a pull request.
