@@ -7,6 +7,8 @@ This is the first public-safe release of the **AD Groups Lookup Utility**, a GUI
 - Across multiple selectable domains
 - Using Global Catalog (3268) for cross-domain visibility
 
+<img src="./docs/screenshots/ui-preview.png">
+
 ### 🔍 Features
 - Clean Windows Forms GUI
 - Domain dropdown selector
