@@ -75,6 +75,9 @@ You can easily modify:
 - Group sorting or filtering
 - Error messages
 
+📷 Screenshot <br><br>
+<img width="551" height="606" alt="image" src="https://github.com/user-attachments/assets/e7b589e3-42d2-45ff-9e7f-a377385c59cf" />
+
 📄 License<br>
 - You may release this project under any license you prefer (MIT recommended).
 
